@@ -5,3 +5,4 @@
 @zondax/=node_modules/@zondax/
 solidity-cborutils/=node_modules/solidity-cborutils
 @ensdomains/=node_modules/@ensdomains
+@openzeppelin/=lib/openzeppelin-contracts/
