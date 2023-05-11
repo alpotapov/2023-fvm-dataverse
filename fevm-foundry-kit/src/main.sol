@@ -4,6 +4,8 @@ pragma solidity 0.8.17;
 import { ReentrancyGuard } from "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 import { Ownable } from "@openzeppelin/contracts/access/Ownable.sol";
 
+/// @notice Register researchers and dataproviders, receive payment for registration and provide data
+/// @author Yonathan Cruz (https://github.com/yonathanavila/)
 contract EHR is Ownable, ReentrancyGuard {
     /// @notice Pause the contract
     bool public paused;
