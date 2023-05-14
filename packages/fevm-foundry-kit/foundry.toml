@@ -6,7 +6,9 @@ remappings = [
     "@ds-test/=lib/ds-test/src/",
     "@solmate/=lib/solmate/src/",
     "@forge-std/=lib/forge-std/src/",
-    "@oz/=lib/oz/contracts/"
+    "@oz/=lib/oz/contracts/",
+    "@openzeppelin/=lib/openzeppelin-contracts/",
+    "@medusa/=lib/medusa-contracts/src/"
 ]
 rpc_endpoints = { hyperspace = '${HYPERSPACE_RPC_URL}' }
 chain_id = 3141
