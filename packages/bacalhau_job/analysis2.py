@@ -3,6 +3,9 @@ import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
 
+print('Hello, world!')
+print('Starting analysis...')
+
 # Set seed for reproducibility
 np.random.seed(0)
 
@@ -25,3 +28,5 @@ sns.scatterplot(x='Sleep Duration', y='Depression Score', hue='Group', data=data
 plt.title('Correlation between Sleep Duration and Depression')
 
 plt.savefig('sleep_depression_correlation.png')
+
+print('Analysis complete!')
