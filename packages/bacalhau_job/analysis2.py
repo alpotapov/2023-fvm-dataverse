@@ -23,4 +23,5 @@ data = pd.DataFrame({'Sleep Duration': sleep, 'Depression Score': depression, 'G
 plt.figure(figsize=(10, 6))
 sns.scatterplot(x='Sleep Duration', y='Depression Score', hue='Group', data=data)
 plt.title('Correlation between Sleep Duration and Depression')
-plt.show()
+
+plt.savefig('sleep_depression_correlation.png')
