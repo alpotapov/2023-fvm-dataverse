@@ -27,6 +27,6 @@ plt.figure(figsize=(10, 6))
 sns.scatterplot(x='Sleep Duration', y='Depression Score', hue='Group', data=data)
 plt.title('Correlation between Sleep Duration and Depression')
 
-plt.savefig('sleep_depression_correlation.png')
+plt.savefig('/outputs/sleep_depression_correlation.png')
 
 print('Analysis complete!')
