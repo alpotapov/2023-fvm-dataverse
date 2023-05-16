@@ -9,6 +9,21 @@ import {
 } from '@chakra-ui/react'
 
 function QueryBuilder(props) {
+  const [scripturl, setscripturl] = useState("");
+
+  const handleUpload = async (event) => {
+    const image = event.target.files[0]
+    const formData = new FormData()
+    formData.append('file', image)
+
+    const response = await fetch('http://localhost:4000/api/medical/upload', {
+      method: 'POST',
+      body: formData,
+    });
+    const data = await response.json()
+    setscripturl(data.protocolLink);
+  }
+
   return (
     <Container minWidth="6xl">
       <Heading mb="6">EHR Query Builder</Heading>
@@ -22,7 +37,8 @@ function QueryBuilder(props) {
       </Flex>
       <Flex mb="5">
         <FormLabel w="32">Script Upload</FormLabel>
-        <Button>Browse File</Button>
+        <input type='file' onChange={handleUpload}/>
+        <p>{scripturl}</p>
       </Flex>
       <Flex mt="5" mb="5">
         <FormLabel w="32"></FormLabel>
