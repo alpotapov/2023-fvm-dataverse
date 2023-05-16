@@ -1,0 +1,7 @@
+cache/
+out/
+.vscode/
+
+.env
+broadcast
+node_modules
