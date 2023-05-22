@@ -4,6 +4,7 @@ import { useProvider, useSigner } from 'wagmi'
 import { chainId } from '../utils/Chain'
 import {
   Container,
+  Center,
   Flex,
   FormLabel,
   Textarea,
@@ -69,7 +70,7 @@ function QueryBuilder(props) {
   }
 
   return (
-    <Container minWidth="6xl">
+    <Container minWidth="6xl"  mb="10">
       <Heading mb="6" textAlign="center">EHR Query Builder</Heading>
 
       <Container maxW="6xl">
@@ -99,7 +100,7 @@ function QueryBuilder(props) {
             </FormControl>
           </Box>
           <Box borderRadius="lg" borderColor="#817ECB" bg="#A49BE7" borderWidth='1px' overflow="hidden" p="4">
-            <Heading fontSize="xl" color="white">FEES</Heading>
+            <Heading fontSize="xl" color="white" mb="7">FEES</Heading>
 
             <StatGroup mt="3" mb="10" color="white">
               <Stat>
@@ -120,18 +121,17 @@ function QueryBuilder(props) {
 
             <Text fontSize="2xl" mb="10" color="white">Total: $2.200.00</Text>
 
-            <Flex mt="5" mb="5">
-              <FormLabel></FormLabel>
-              <div>
-                <Button colorScheme="blue" mb="3">
-                  Connect Wallet and Pay
-                </Button>
-                <br />
-                <Button  onClick={handleCreateNewQuery}>
-                  Execute Job
-                </Button>
-              </div>
-            </Flex>
+            <Center>
+              <Button className="button2" mt="5" px="20" py="6" color="white">
+                Connect Wallet and Pay
+              </Button>
+            </Center>
+            <br />
+            <Center>
+              <Button className="buttonMain" px="32" py="6" color="white" onClick={handleCreateNewQuery}>
+                Execute Job
+              </Button>
+            </Center>
           </Box>
         </SimpleGrid>
       </Container>

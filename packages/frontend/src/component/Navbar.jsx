@@ -14,7 +14,7 @@ function Navbar() {
           </Link>
         </Box>
         <Link as={ReactLink} to="/" mx='10'>Home</Link>
-        <Link as={ReactLink} to="/patient" mx='10'>Patient</Link>
+        <Link as={ReactLink} to="/patient-portal" mx='10'>Patient</Link>
         <Link as={ReactLink} to="/query-builder" mx='10'>Query Builder</Link>
         <Spacer />
         <ConnectButton accountStatus="address" label="Sign in" />

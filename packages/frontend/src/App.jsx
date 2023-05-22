@@ -7,9 +7,11 @@ import { chains } from './utils/Provider'
 import { chainSelected, chainId } from './utils/Chain'
 import '@rainbow-me/rainbowkit/styles.css'
 import Patient from './pages/Patient'
+import PatientPortal from './pages/PatientPortal'
 import QueryBuilder from './pages/QueryBuilder'
 import Welcome from './pages/Welcome'
 import Navbar from './component/Navbar'
+import Footer from './component/Footer'
 
 import './App.css'
 
@@ -26,9 +28,11 @@ function App() {
             <Navbar />
             <Routes>
               <Route path="/query-builder" element={<QueryBuilder />} />
+              <Route path="/patient-portal" element={<PatientPortal />} />
               <Route path="/patient" element={<Patient />} />
               <Route path="/" element={<Welcome />} />
             </Routes>
+            <Footer />
           </HashRouter>
         </ChakraProvider>
       </RainbowKitProvider>
