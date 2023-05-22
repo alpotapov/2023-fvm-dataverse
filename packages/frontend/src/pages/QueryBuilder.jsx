@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { useNavigate} from 'react-router-dom'
 import CreateNewQuery from '../utils/CreateNewQuery'
 import { useProvider, useSigner } from 'wagmi'
 import { chainId } from '../utils/Chain'
@@ -23,6 +24,8 @@ import {
 import { Web3Storage } from 'web3.storage'
 
 function QueryBuilder(props) {
+  const changePage = useNavigate()
+
   const provider = useProvider(chainId)
   const { data: signer } = useSigner(chainId)
   const [scripturl, setscripturl] = useState('')
@@ -128,7 +131,7 @@ function QueryBuilder(props) {
             </Center>
             <br />
             <Center>
-              <Button className="buttonMain" px="32" py="6" color="white" onClick={handleCreateNewQuery}>
+              <Button className="buttonMain" px="32" py="6" color="white" onClick={() => changePage("/result-viewer")}>
                 Execute Job
               </Button>
             </Center>

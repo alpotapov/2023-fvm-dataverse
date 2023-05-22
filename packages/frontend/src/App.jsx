@@ -10,6 +10,7 @@ import Patient from './pages/Patient'
 import PatientPortal from './pages/PatientPortal'
 import QueryBuilder from './pages/QueryBuilder'
 import Welcome from './pages/Welcome'
+import ResultViewer from './pages/ResultViewer'
 import Navbar from './component/Navbar'
 import Footer from './component/Footer'
 
@@ -29,6 +30,7 @@ function App() {
             <Routes>
               <Route path="/query-builder" element={<QueryBuilder />} />
               <Route path="/patient-portal" element={<PatientPortal />} />
+              <Route path="/result-viewer" element={<ResultViewer />} />
               <Route path="/patient" element={<Patient />} />
               <Route path="/" element={<Welcome />} />
             </Routes>
