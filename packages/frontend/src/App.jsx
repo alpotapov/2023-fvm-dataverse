@@ -8,7 +8,9 @@ import { chainSelected, chainId } from './utils/Chain'
 import '@rainbow-me/rainbowkit/styles.css'
 import Patient from './pages/Patient'
 import QueryBuilder from './pages/QueryBuilder'
+import Welcome from './pages/Welcome'
 import Navbar from './component/Navbar'
+
 import './App.css'
 
 function App() {
@@ -25,7 +27,7 @@ function App() {
             <Routes>
               <Route path="/query-builder" element={<QueryBuilder />} />
               <Route path="/patient" element={<Patient />} />
-              <Route path="/" element={<h1>Welcome</h1>} />
+              <Route path="/" element={<Welcome />} />
             </Routes>
           </HashRouter>
         </ChakraProvider>

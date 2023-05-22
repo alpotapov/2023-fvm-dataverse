@@ -9,6 +9,15 @@ import {
   Textarea,
   Heading,
   Button,
+  Box,
+  SimpleGrid,
+  FormControl,
+  Input,
+  StatGroup,
+  Stat,
+  StatLabel,
+  StatNumber,
+  Text,
 } from '@chakra-ui/react'
 import { Web3Storage } from 'web3.storage'
 
@@ -61,34 +70,71 @@ function QueryBuilder(props) {
 
   return (
     <Container minWidth="6xl">
-      <Heading mb="6">EHR Query Builder</Heading>
-      <Flex mb="5">
-        <FormLabel w="32">Query</FormLabel>
-        <Textarea rows="7" />
-      </Flex>
-      <Flex mb="5">
-        <FormLabel w="32">Projection</FormLabel>
-        <p>{JSON.stringify(projection)}</p>
-        {/* <Textarea rows="4">
-        </Textarea> */}
-      </Flex>
-      <Flex mb="5">
-        <FormLabel w="32">Script Upload</FormLabel>
-        <input type="file" onChange={handleScript} />
-        <p>{scripturl}</p>
-      </Flex>
-      <Flex mt="5" mb="5">
-        <FormLabel w="32"></FormLabel>
-        <div>
-          <Button colorScheme="blue" mb="3">
-            Connect Wallet and Pay
-          </Button>
-          <br />
-          <Button colorScheme="blue" onClick={handleCreateNewQuery}>
-            Execute Job
-          </Button>
-        </div>
-      </Flex>
+      <Heading mb="6" textAlign="center">EHR Query Builder</Heading>
+
+      <Container maxW="6xl">
+        <SimpleGrid minChildWidth='300px' columns={[2]} spacing={10}>
+          <Box borderRadius="lg" borderColor="#A49BE7" borderWidth='1px' overflow="hidden" p="4">
+            <FormControl mb="5">
+              <FormLabel color="#A49BE7" fontWeight="bold" fontSize="xl">QUERY</FormLabel>
+              <Textarea rows="7" placeholder='Enter code' />
+            </FormControl>
+
+            <FormControl mb="5">
+              <FormLabel color="#A49BE7" fontWeight="bold" fontSize="xl">PROJECTION</FormLabel>
+              <p>{JSON.stringify(projection)}</p>
+              {/* <Textarea rows="4">
+              </Textarea> */}
+            </FormControl>
+
+            <FormControl mb="5">
+              <FormLabel color="#A49BE7" fontWeight="bold" fontSize="xl">NUMBER OF PATIENTS</FormLabel>
+              <Input placeholder='Enter numbers' />
+            </FormControl>
+
+            <FormControl mb="5">
+              <FormLabel color="#A49BE7" fontWeight="bold" fontSize="xl">SCRIPT UPLOAD</FormLabel>
+              <input type="file" onChange={handleScript} />
+              <p>{scripturl}</p>
+            </FormControl>
+          </Box>
+          <Box borderRadius="lg" borderColor="#817ECB" bg="#A49BE7" borderWidth='1px' overflow="hidden" p="4">
+            <Heading fontSize="xl" color="white">FEES</Heading>
+
+            <StatGroup mt="3" mb="10" color="white">
+              <Stat>
+                <StatLabel>Records requested:</StatLabel>
+                <StatNumber>10.000</StatNumber>
+              </Stat>
+
+              <Stat>
+                <StatLabel>Royalties per record:</StatLabel>
+                <StatNumber>$200</StatNumber>
+              </Stat>
+
+              <Stat>
+                <StatLabel>Protocol Fee:</StatLabel>
+                <StatNumber>10%</StatNumber>
+              </Stat>
+            </StatGroup>
+
+            <Text fontSize="2xl" mb="10" color="white">Total: $2.200.00</Text>
+
+            <Flex mt="5" mb="5">
+              <FormLabel></FormLabel>
+              <div>
+                <Button colorScheme="blue" mb="3">
+                  Connect Wallet and Pay
+                </Button>
+                <br />
+                <Button  onClick={handleCreateNewQuery}>
+                  Execute Job
+                </Button>
+              </div>
+            </Flex>
+          </Box>
+        </SimpleGrid>
+      </Container>
     </Container>
   )
 }
