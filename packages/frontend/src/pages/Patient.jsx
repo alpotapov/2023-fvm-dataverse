@@ -11,6 +11,8 @@ import {
   Button,
   Badge,
 } from '@chakra-ui/react'
+import { ethers } from 'ethers';
+import Web3Modal from 'web3modal';
 import CardRequest from '../component/CardRequest'
 
 const data = [
@@ -56,6 +58,19 @@ function Patient(props) {
   useEffect(() => {
     setRequestCount(requests.length)
   }, [])
+
+  const openMetaMask = async () => {
+    const web3Modal = new Web3Modal();
+    const connection = await web3Modal.connect();
+    const provider = new ethers.providers.Web3Provider(connection);  
+    
+    const signer = provider.getSigner();
+
+    // const medusaOracleAddress = "0xb0dd3eb2374b21b6efacf41a16e25ed8114734e0";
+    // const medusa = await Medusa.init(medusaOracleAddress, signer);
+
+    // console.log(medusa);
+  }
 
   return (
     <Container minWidth="6xl">
